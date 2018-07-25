@@ -17,7 +17,7 @@ def customlogger(logLevel=logging.DEBUG):
     # By default, log all messages
     logger.setLevel(logging.DEBUG)
 
-    fileHandler = logging.FileHandler('../../logs/'+
+    fileHandler = logging.FileHandler(
     				datetime.now().strftime('%H_%M_%d_%m_%Y_')+'file.log')
     fileHandler.setLevel(logLevel)
 
