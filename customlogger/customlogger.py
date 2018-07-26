@@ -44,7 +44,7 @@ class CustomLogger(object):
 
 ################################################################################
     #Add method to catch warning level log
-    ef warning(self, msg):
+    def warning(self, msg):
         self.logger.warning(msg)
 
 ################################################################################
