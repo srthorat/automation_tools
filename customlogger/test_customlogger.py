@@ -12,10 +12,10 @@ import customlogger as cl
 import unittest
 
 
-class CaffienClientTestCase(unittest.TestCase):
+class CustomloggerTestCase(unittest.TestCase):
 
 	def setUp(self):
-			self.logger=cl.customlogger()
+			self.logger=cl.CustomLogger()
 
 	def test_logger_info_level(self):
 		self.assertNotEqual(self.logger.info('''This is a test for logger with 

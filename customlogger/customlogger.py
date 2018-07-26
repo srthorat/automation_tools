@@ -2,7 +2,7 @@
 """
 Description: Custom logger library
 Author : Sakharam Thorat
-Date   : 04/07/2017
+Date   : 25/07/2018
 Email  : srt.2011@outlook.com
 
 """
@@ -10,19 +10,43 @@ Email  : srt.2011@outlook.com
 import logging
 from datetime import datetime
 
+class CustomLogger(object):
+    def __init__(self,logLevel=logging.DEBUG):
+        # Create the Logger
+        self.logger = logging.getLogger(__name__)
+        self.logger.setLevel(logLevel)
 
-def customlogger(logLevel=logging.DEBUG):
-    # Gets the name of the class / method from where this method is called
-    logger = logging.getLogger(__name__)
-    # By default, log all messages
-    logger.setLevel(logging.DEBUG)
+        # Create the file Handler for logging data to a file
+        fileHandler = logging.FileHandler(
+                    datetime.now().strftime('%H_%M_%d_%m_%Y_')+'file.log')
+        fileHandler.setLevel(logLevel)
 
-    fileHandler = logging.FileHandler(
-    				datetime.now().strftime('%H_%M_%d_%m_%Y_')+'file.log')
-    fileHandler.setLevel(logLevel)
-
-    formatter = logging.Formatter('%(asctime)s - %(module)s - %(levelname)s: %(message)s',
+        # Create a Formatter for formatting the log messages
+        formatter = logging.Formatter('%(asctime)s - %(module)s - %(levelname)s: %(message)s',
                     datefmt='%m/%d/%Y %I:%M:%S %p')
-    fileHandler.setFormatter(formatter)
-    logger.addHandler(fileHandler)
-    return logger
+
+        # Add the Formatter to the Handler
+        fileHandler.setFormatter(formatter)
+
+        # Add the file Handler to the Logger
+        self.logger.addHandler(fileHandler)
+        self.logger.info('Completed configuring logger()!')
+
+################################################################################
+    def debug(self, msg):
+        self.logger.debug(msg)
+
+################################################################################
+    def info(self, msg):
+        self.logger.info(msg)
+
+################################################################################
+    def warning(self, msg):
+        self.logger.warning(msg)
+
+################################################################################
+    def error(self, msg):
+        self.logger.error(msg)
+
+################################################################################
+
