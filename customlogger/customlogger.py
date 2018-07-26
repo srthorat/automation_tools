@@ -33,18 +33,22 @@ class CustomLogger(object):
         self.logger.info('Completed configuring logger()!')
 
 ################################################################################
+    #Add method to catch debug level log
     def debug(self, msg):
         self.logger.debug(msg)
 
 ################################################################################
+    #Add method to catch info level log
     def info(self, msg):
         self.logger.info(msg)
 
 ################################################################################
-    def warning(self, msg):
+    #Add method to catch warning level log
+    ef warning(self, msg):
         self.logger.warning(msg)
 
 ################################################################################
+    #Add method to catch error level log
     def error(self, msg):
         self.logger.error(msg)
 
