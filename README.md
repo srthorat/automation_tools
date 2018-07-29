@@ -4,3 +4,5 @@
   Contain CustomLogger class which can be directly imported to python script to enable logging.
 ### json_validator
 Contain JsonValidator class which canbe used to validate json respoced received from various rest api requests with   refrence schema.
+### sendmail
+ Contain SendEmailUtility class which can be used to send the Automation test reports to Team
