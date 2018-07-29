@@ -7,7 +7,6 @@ Email  : srt.2011@outlook.com
 
 """
 
-import logging
 import json_validator as jv
 import unittest
 from reference_schema import *
